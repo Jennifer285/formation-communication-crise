@@ -248,6 +248,23 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(255, 144, 0, 0.3);
         }
+<!-- Formulaire de contact (démo, sans envoi) -->
+<section class="section fade-in">
+  <h2>Formulaire de Contact</h2>
+  <form onsubmit="event.preventDefault(); alert('Formulaire soumis (démo) !');" class="contact-form">
+
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+
+    <button type="submit" class="download-btn">Envoyer</button>
+  </form>
+</section>
 
         /* Footer */
         .footer {
@@ -320,6 +337,26 @@
                 transform: translateY(0);
             }
         }
+        .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
     </style>
 </head>
 <body>
