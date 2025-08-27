@@ -20,4 +20,341 @@
 
     /* Header */
     .header {
-      background: linear-gradient(135deg,
+      background: linear-gradient(135deg, #FF9000 0%, #C3AC7B 100%);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .header .subtitle {
+      font-size: 1.4rem;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+
+    .date-location {
+      background: rgba(255,255,255,0.2);
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    /* Logo */
+    .logo {
+      max-width: 120px;
+      height: auto;
+      margin: 0 auto 20px auto;
+      display: block;
+    }
+
+    /* Sections */
+    .main-content { padding: 60px 0; }
+    .section { margin-bottom: 60px; }
+    .section h2 {
+      color: #2F2F2F;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #FF9000;
+      padding-bottom: 10px;
+    }
+
+    /* Objectifs */
+    .objectifs {
+      background: #f8f9fa;
+      padding: 40px;
+      border-radius: 15px;
+      border-left: 5px solid #FF9000;
+    }
+    .objectifs ul { list-style: none; padding-left: 0; }
+    .objectifs li {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+      font-size: 1.1rem;
+    }
+    .objectifs li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #FF9000;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* Programme (accordéon) */
+    .accordion {
+      border: 1px solid #CDCCCC;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .accordion-item { border-bottom: 1px solid #CDCCCC; }
+    .accordion-item:last-child { border-bottom: none; }
+    .accordion-header {
+      background: #2F2F2F;
+      color: white;
+      padding: 20px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-header:hover { background: #FF9000; }
+    .accordion-toggle { font-size: 1.5rem; transition: transform 0.3s ease; }
+    .accordion-content {
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      background: white;
+    }
+    .accordion-content.active {
+      padding: 20px;
+      max-height: 1000px;
+    }
+    .accordion-toggle.active { transform: rotate(45deg); }
+    .time-slot { color: #FF9000; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px; }
+    .activity { margin-bottom: 15px; padding-left: 20px; }
+    .activity ul { margin-top: 10px; padding-left: 20px; }
+
+    /* Informations pratiques */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .info-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-top: 4px solid #FF9000;
+    }
+    .info-card h3 { color: #2F2F2F; margin-bottom: 15px; font-size: 1.3rem; }
+    .info-card p { margin-bottom: 10px; font-size: 1.1rem; }
+
+    /* Carte Google Maps */
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .map-container iframe { width: 100%; height: 100%; border: none; }
+
+    /* Téléchargements */
+    .download-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .download-btn {
+      background: linear-gradient(135deg, #FF9000, #C3AC7B);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 144, 0, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      background: #2F2F2F;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer h3 { color: #FF9000; margin-bottom: 20px; font-size: 1.5rem; }
+    .contact-info { font-size: 1.1rem; margin-bottom: 10px; }
+    .contact-info a { color: white; text-decoration: none; }
+    .contact-info a:hover { color: #FF9000; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 { font-size: 2rem; }
+      .header .subtitle { font-size: 1.2rem; }
+      .date-location { font-size: 1rem; padding: 10px 20px; }
+      .section h2 { font-size: 2rem; }
+      .download-buttons { flex-direction: column; }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Animation */
+    .fade-in { animation: fadeIn 0.8s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <img src="./logobronzehdfondblanc.jpg" alt="Logo de la formation" class="logo fade-in">
+      <h1 class="fade-in">Formation Communication de Crise</h1>
+      <p class="subtitle fade-in">Anticiper, Gérer et Communiquer en Situation de Crise</p>
+      <div class="date-location fade-in">
+        📅 1er septembre 2025 | 📍 Nantes - Nuage B
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Objectifs -->
+      <section class="section fade-in">
+        <h2>Objectifs de la Formation</h2>
+        <div class="objectifs">
+          <ul>
+            <li>Comprendre les enjeux et mécanismes de la communication de crise dans un contexte organisationnel</li>
+            <li>Anticiper et préparer la gestion de crise en mobilisant les outils et méthodes adaptés</li>
+            <li>Coordonner les parties prenantes internes et externes pour préserver la réputation</li>
+            <li>Piloter une cellule de crise et délivrer des messages adaptés aux différentes cibles</li>
+            <li>Capitaliser sur l'expérience de crise pour renforcer la résilience organisationnelle</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Programme -->
+      <section class="section fade-in">
+        <h2>Programme Détaillé</h2>
+        <div class="accordion">
+          <!-- Exemple d’un item -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span>Ouverture & Diagnostic</span>
+              <span class="accordion-toggle">+</span>
+            </div>
+            <div class="accordion-content">
+              <div class="time-slot">9h00 - 9h20 (20 min)</div>
+              <div class="activity">
+                <p><strong>Contenu :</strong></p>
+                <ul>
+                  <li>Accueil et présentation du formateur et des participants</li>
+                  <li>Icebreaker "Thermomètre de crise"</li>
+                  <li>Recueil des attentes individuelles</li>
+                  <li>Présentation des objectifs et du déroulé</li>
+                  <li>Flash théorique : typologie des crises (Lagadec)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Ajoute ici les autres items de programme comme tu l’avais fait -->
+        </div>
+      </section>
+
+      <!-- Informations pratiques -->
+      <section class="section fade-in">
+        <h2>Informations Pratiques</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>📍 Lieu et Accès</h3>
+            <p><strong>Nuage B</strong></p>
+            <p>6 rue René Viviani</p>
+            <p>44200 Nantes</p>
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <h3>⏰ Modalités</h3>
+            <p><strong>Date :</strong> 1er septembre 2025</p>
+            <p><strong>Durée :</strong> 7 heures (1 journée)</p>
+            <p><strong>Horaires :</strong> 9h00 - 17h00</p>
+            <p><strong>Format :</strong> Présentiel</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Téléchargements -->
+      <section class="section fade-in">
+        <h2>Documents à Télécharger</h2>
+        <div class="download-buttons">
+          <a href="./programme.pdf" class="download-btn" download="programme.pdf">
+            📄 Programme détaillé (PDF)
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <h3>Contact Formatrice</h3>
+      <div class="contact-info">
+        <p><strong>Jennifer Mandot</strong></p>
+        <p>📞 <a href="tel:0663026534">06 63 02 65 34</a></p>
+        <p>✉️ <a href="mailto:jennifer.mandot@outlook.com">jennifer.mandot@outlook.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Accordéon
+    function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const toggle = header.querySelector('.accordion-toggle');
+      document.querySelectorAll('.accordion-content').forEach(item => {
+        if (item !== content) {
+          item.classList.remove('active');
+          item.previousElementSibling.querySelector('.accordion-toggle').classList.remove('active');
+        }
+      });
+      content.classList.toggle('active');
+      toggle.classList.toggle('active');
+    }
+
+    // Animation scroll
+    function handleScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.fade-in').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      });
+      setTimeout(() => { handleScroll(); }, 100);
+    });
+    window.addEventListener('scroll', handleScroll);
+  </script>
+</body>
+</html>
