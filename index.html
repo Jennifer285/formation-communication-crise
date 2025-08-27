@@ -234,40 +234,12 @@
         <h2>Objectifs de la Formation</h2>
         <div class="objectifs">
           <ul>
-            <li>Comprendre les enjeux et mécanismes de la communication de crise dans un contexte organisationnel</li>
-            <li>Anticiper et préparer la gestion de crise en mobilisant les outils et méthodes adaptés</li>
-            <li>Coordonner les parties prenantes internes et externes pour préserver la réputation</li>
-            <li>Piloter une cellule de crise et délivrer des messages adaptés aux différentes cibles</li>
-            <li>Capitaliser sur l'expérience de crise pour renforcer la résilience organisationnelle</li>
+            <li>Comprendre les enjeux et mécanismes de la communication de crise</li>
+            <li>Anticiper et préparer la gestion de crise</li>
+            <li>Coordonner les parties prenantes internes et externes</li>
+            <li>Piloter une cellule de crise et délivrer des messages adaptés</li>
+            <li>Capitaliser sur l'expérience de crise pour renforcer la résilience</li>
           </ul>
-        </div>
-      </section>
-
-      <!-- Programme -->
-      <section class="section fade-in">
-        <h2>Programme Détaillé</h2>
-        <div class="accordion">
-          <!-- Exemple d’un item -->
-          <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-              <span>Ouverture & Diagnostic</span>
-              <span class="accordion-toggle">+</span>
-            </div>
-            <div class="accordion-content">
-              <div class="time-slot">9h00 - 9h20 (20 min)</div>
-              <div class="activity">
-                <p><strong>Contenu :</strong></p>
-                <ul>
-                  <li>Accueil et présentation du formateur et des participants</li>
-                  <li>Icebreaker "Thermomètre de crise"</li>
-                  <li>Recueil des attentes individuelles</li>
-                  <li>Présentation des objectifs et du déroulé</li>
-                  <li>Flash théorique : typologie des crises (Lagadec)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- Ajoute ici les autres items de programme comme tu l’avais fait -->
         </div>
       </section>
 
@@ -281,7 +253,12 @@
             <p>6 rue René Viviani</p>
             <p>44200 Nantes</p>
             <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!..."></iframe>
+              <iframe
+                src="https://www.google.com/maps?q=6+Rue+Ren%C3%A9+Viviani,+44200+Nantes&hl=fr&z=16&output=embed"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
           </div>
 
@@ -318,43 +295,5 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // Accordéon
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const toggle = header.querySelector('.accordion-toggle');
-      document.querySelectorAll('.accordion-content').forEach(item => {
-        if (item !== content) {
-          item.classList.remove('active');
-          item.previousElementSibling.querySelector('.accordion-toggle').classList.remove('active');
-        }
-      });
-      content.classList.toggle('active');
-      toggle.classList.toggle('active');
-    }
-
-    // Animation scroll
-    function handleScroll() {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        const elementVisible = 150;
-        if (elementTop < window.innerHeight - elementVisible) {
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }
-      });
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.fade-in').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-      });
-      setTimeout(() => { handleScroll(); }, 100);
-    });
-    window.addEventListener('scroll', handleScroll);
-  </script>
 </body>
 </html>
