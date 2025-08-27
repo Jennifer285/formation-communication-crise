@@ -145,6 +145,18 @@
     }
     .download-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,144,0,.3); }
 
+    /* Footer */
+    .footer {
+      background: #2F2F2F;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer h3 { color: #FF9000; margin-bottom: 20px; font-size: 1.5rem; }
+    .contact-info { font-size: 1.1rem; margin-bottom: 10px; }
+    .contact-info a { color: #fff; text-decoration: none; }
+    .contact-info a:hover { color: #FF9000; }
+
     /* Responsive */
     @media (max-width: 768px) {
       .header h1 { font-size: 2rem; }
@@ -178,6 +190,7 @@
   <!-- Contenu principal -->
   <main class="main-content">
     <div class="container">
+
       <!-- Objectifs -->
       <section class="section fade-in">
         <h2>Objectifs de la Formation</h2>
@@ -196,11 +209,11 @@
       <section class="section fade-in">
         <h2>Programme Détaillé</h2>
         <div class="accordion">
-          <!-- Accordéon items... (comme précédemment) -->
+          <!-- Place ici les items de ton déroulé comme avant -->
         </div>
       </section>
 
-      <!-- Informations pratiques avec carte et bouton Google Business -->
+      <!-- Informations pratiques -->
       <section class="section fade-in">
         <h2>Informations Pratiques</h2>
         <div class="info-grid">
@@ -252,11 +265,19 @@
         <p><strong>Jennifer Mandot</strong></p>
         <p>📞 <a href="tel:0663026534">06 63 02 65 34</a></p>
         <p>✉️ <a href="mailto:jennifer.mandot@outlook.com">jennifer.mandot@outlook.com</a></p>
+
+        <!-- Bouton LinkedIn -->
+        <p style="margin-top: 20px;">
+          <a href="https://www.linkedin.com/in/jennifer-mandot-%F0%9F%AA%84-141662aa/"
+             target="_blank" class="download-btn">
+             💼 Me suivre sur LinkedIn
+          </a>
+        </p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts pour l'accordéon et animations -->
+  <!-- Scripts -->
   <script>
     function toggleAccordion(header) {
       const content = header.nextElementSibling;
