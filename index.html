@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Communication de Crise - 1er septembre 2025</title>
+    <meta name="description" content="Formation certifiante en communication de crise - Anticiper, gérer et communiquer en situation de crise - 1er septembre 2025 à Nantes">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #FF9000 0%, #C3AC7B 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .date-location {
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Main content */
+        .main-content {
+            padding: 60px 0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            color: #2F2F2F;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #FF9000;
+            padding-bottom: 10px;
+        }
+
+        /* Objectifs */
+        .objectifs {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            border-left: 5px solid #FF9000;
+        }
+
+        .objectifs ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .objectifs li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .objectifs li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #FF9000;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Programme accordéon */
+        .accordion {
+            border: 1px solid #CDCCCC;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #CDCCCC;
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            background: #2F2F2F;
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-header:hover {
+            background: #FF9000;
+        }
+
+        .accordion-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: white;
+        }
+
+        .accordion-content.active {
+            padding: 20px;
+            max-height: 1000px;
+        }
+
+        .accordion-toggle.active {
+            transform: rotate(45deg);
+        }
+
+        .time-slot {
+            color: #FF9000;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .activity {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        .activity ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        /* Informations pratiques */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #FF9000;
+        }
+
+        .info-card h3 {
+            color: #2F2F2F;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Carte */
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Téléchargements */
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #FF9000, #C3AC7B);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 144, 0, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2F2F2F;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer h3 {
+            color: #FF9000;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #FF9000;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .date-location {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation d'entrée */
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="fade-in">Formation Communication de Crise</h1>
+            <p class="subtitle fade-in">Anticiper, Gérer et Communiquer en Situation de Crise</p>
+            <div class="date-location fade-in">
+                📅 1er septembre 2025 | 📍 Nantes - Nuage B
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Objectifs -->
+            <section class="section fade-in">
+                <h2>Objectifs de la Formation</h2>
+                <div class="objectifs">
+                    <ul>
+                        <li>Comprendre les enjeux et mécanismes de la communication de crise dans un contexte organisationnel</li>
+                        <li>Anticiper et préparer la gestion de crise en mobilisant les outils et méthodes adaptés</li>
+                        <li>Coordonner les parties prenantes internes et externes pour préserver la réputation</li>
+                        <li>Piloter une cellule de crise et délivrer des messages adaptés aux différentes cibles</li>
+                        <li>Capitaliser sur l'expérience de crise pour renforcer la résilience organisationnelle</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Programme -->
+            <section class="section fade-in">
+                <h2>Programme Détaillé</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Ouverture & Diagnostic</span>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="time-slot">9h00 - 9h20 (20 min)</div>
+                            <div class="activity">
+                                <p><strong>Contenu :</strong></p>
+                                <ul>
+                                    <li>Accueil et présentation du formateur et des participants</li>
+                                    <li>Icebreaker "Thermomètre de crise" - Positionnement sur l'échelle du stress</li>
+                                    <li>Recueil des attentes individuelles</li>
+                                    <li>Présentation des objectifs et du déroulé</li>
+                                    <li>Flash théorique : Définition et typologie des crises (Lagadec)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Cartographie des Signaux Faibles</span>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="time-slot">9h20 - 11h00 (1h40)</div>
+                            <div class="activity">
+                                <p><strong>Apport expert (15 min) :</strong></p>
+                                <ul>
+                                    <li>Modèle PESTEL appliqué à la veille de crise</li>
+                                    <li>Matrice de criticité : impact × probabilité × délai</li>
+                                    <li>Travaux de Michel Godet et Igor Ansoff</li>
+                                </ul>
+                                <p><strong>Atelier "Détective de crise" (1h25) :</strong></p>
+                                <ul>
+                                    <li>Travail en équipes de 4 personnes</li>
+                                    <li>Manipulation de cartes signaux (tactiles + QR codes audio)</li>
+                                    <li>Reconstitution du puzzle d'une crise naissante</li>
+                                    <li>Restitution et débriefing collectif</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Architecture de la Cellule de Crise</span>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="time-slot">11h20 - 13h00 (1h40)</div>
+                            <div class="activity">
+                                <p><strong>Apport expert (20 min) :</strong></p>
+                                <ul>
+                                    <li>Théorie des organisations en crise (Koenig & Meier)</li>
+                                    <li>Modèle OODA (Observer, Orient, Decide, Act)</li>
+                                    <li>Rôles clés et circuits de décision</li>
+                                </ul>
+                                <p><strong>Simulation "Mission Control" (1h20) :</strong></p>
+                                <ul>
+                                    <li>Attribution des rôles en cellule de crise</li>
+                                    <li>Évolution du scénario toutes les 20 minutes</li>
+                                    <li>Prise de décisions en temps réel</li>
+                                    <li>Analyse des dysfonctionnements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Laboratoire de Messages</span>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="time-slot">14h00 - 15h40 (1h40)</div>
+                            <div class="activity">
+                                <p><strong>Apport expert (15 min) :</strong></p>
+                                <ul>
+                                    <li>Stratégies de communication persuasive (modèle ELM)</li>
+                                    <li>Théorie des parties prenantes (Freeman)</li>
+                                    <li>Principe des 3C : Célérité, Cohérence, Crédibilité</li>
+                                </ul>
+                                <p><strong>Atelier créatif (1h25) :</strong></p>
+                                <ul>
+                                    <li>Production de messages pour 3 cibles différentes</li>
+                                    <li>Utilisation de templates modulaires</li>
+                                    <li>Pitch de 3 minutes par équipe</li>
+                                    <li>Feedback constructif du groupe</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Simulation de Crise Intégrée</span>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="time-slot">16h00 - 16h40 (40 min)</div>
+                            <div class="activity">
+                                <p><strong>Flash expert (5 min) :</strong></p>
+                                <ul>
+                                    <li>Gestion du stress et prise de décision (Kahneman)</li>
+                                    <li>Biais cognitifs en situation de crise</li>
+                                </ul>
+                                <p><strong>Jeu "Breaking News" (35 min) :</strong></p>
+                                <ul>
+                                    <li>Mobilisation de tous les acquis</li>
+                                    <li>Injection d'événements toutes les 10 minutes</li>
+                                    <li>Gestion en temps réel de la cellule de crise</li>
+                                    <li>Production de livrables courts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>Capitalisation & Clôture</span>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="time-slot">16h40 - 17h00 (20 min)</div>
+                            <div class="activity">
+                                <p><strong>Synthèse experte (5 min) :</strong></p>
+                                <ul>
+                                    <li>Modèle d'apprentissage post-crise (Argyris & Schön)</li>
+                                    <li>Cycle PDCA et amélioration continue</li>
+                                </ul>
+                                <p><strong>Bilan et perspectives (15 min) :</strong></p>
+                                <ul>
+                                    <li>Évaluation à chaud de la formation</li>
+                                    <li>Identification d'un apprentissage clé personnel</li>
+                                    <li>Définition d'un "petit pas" à mettre en œuvre</li>
+                                    <li>Remise des certificats et supports</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Informations pratiques -->
+            <section class="section fade-in">
+                <h2>Informations Pratiques</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📍 Lieu et Accès</h3>
+                        <p><strong>Nuage B</strong></p>
+                        <p>6 rue René Viviani</p>
+                        <p>44200 Nantes</p>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2707.8!2d-1.5536!3d47.2184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ee81f0b0b0b0%3A0x1234567890abcdef!2s6%20rue%20Ren%C3%A9%20Viviani%2C%2044200%20Nantes!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>⏰ Modalités</h3>
+                        <p><strong>Date :</strong> 1er septembre 2025</p>
+                        <p><strong>Durée :</strong> 7 heures (1 journée)</p>
+                        <p><strong>Horaires :</strong> 9h00 - 17h00</p>
+                        <p><strong>Format :</strong> Présentiel avec classe inversée</p>
+                        <p><strong>Effectif :</strong> 16 participants maximum</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🎯 Public Concerné</h3>
+                        <p><strong>Formation pour :</strong></p>
+                        <p>Étudiants Master 2 - Manager des stratégies marketing et communication</p>
+                        <p><strong>Certification :</strong></p>
+                        <p>RNCP 38504 - Bloc BC03</p>
+                        <p><strong>Organisme certifié Qualiopi</strong></p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📚 Préparation</h3>
+                        <p><strong>2 semaines avant :</strong></p>
+                        <p>• Lecture de 3 articles sur des crises récentes</p>
+                        <p>• Quiz en ligne (10 questions auto-correctives)</p>
+                        <p>• Préparation d'un exposé de 2 minutes sur une crise marquante</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Téléchargements -->
+            <section class="section fade-in">
+                <h2>Documents à Télécharger</h2>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" onclick="downloadPDF('programme')">
+                        📄 Programme détaillé (PDF)
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>Contact Formatrice</h3>
+            <div class="contact-info">
+                <p><strong>Jennifer Mandot</strong></p>
+                <p>📞 <a href="tel:0663026534">06 63 02 65 34</a></p>
+                <p>✉️ <a href="mailto:jennifer.mandot@outlook.com">jennifer.mandot@outlook.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fonction accordéon
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.accordion-toggle');
+            
+            // Fermer tous les autres accordéons
+            document.querySelectorAll('.accordion-content').forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                    item.previousElementSibling.querySelector('.accordion-toggle').classList.remove('active');
+                }
+            });
+            
+            // Basculer l'accordéon actuel
+            content.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Animation au scroll
+        function handleScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Fonction de téléchargement (simulation)
+        function downloadPDF(type) {
+            if (type === 'programme') {
+                // Ici, vous pourrez ajouter le lien réel vers le PDF du programme
+                alert('Le téléchargement du programme débutera prochainement. Fichier : programme_communication_crise.pdf');
+            }
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Style initial pour les éléments à animer
+            document.querySelectorAll('.fade-in').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            });
+            
+            // Déclencher les animations
+            setTimeout(() => {
+                handleScroll();
+            }, 100);
+        });
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
+</html>
